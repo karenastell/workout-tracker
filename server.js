@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 
+const Workout = require('./models/Workout');
+
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
@@ -19,10 +21,15 @@ app.use(express.static('public'));
 app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
 
-mongoose.connect(process.env.MONGODO_URI || 'mongodb://localhost/workouts', {
-  useNewUrlParser: true, useUnifiedTopology: true 
+const dbURL = 'mongodb://localhost/workouts';
+
+mongoose.connect(process.env.MONGODO_URI || dbURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
-app.listen(PORT, ()=>{
-    console.log(`running on port ${PORT}`);
-})
+
+
+app.listen(PORT, () => {
+  console.log(`running on port ${PORT}`);
+});
