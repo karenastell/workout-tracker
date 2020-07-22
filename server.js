@@ -16,8 +16,8 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
-// app.use('/', htmlRoutes);
-// app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
+app.use('/api', apiRoutes);
 
 mongoose.connect(process.env.MONGODO_URI || 'mongodb://localhost/workouts', {
   useNewUrlParser: true, useUnifiedTopology: true 
