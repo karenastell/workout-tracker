@@ -21,7 +21,7 @@ app.use(express.static('public'));
 app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
 
-const dbURL = 'mongodb://localhost/workouts';
+const dbURL = 'mongodb://localhost/workout';
 
 mongoose.connect(process.env.MONGODO_URI || dbURL, {
   useNewUrlParser: true,
