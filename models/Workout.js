@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const WorkoutSchema = new Schema({
-  date: {
+  day: {
     type: Date,
     default: Date.now,
   },
@@ -41,6 +41,20 @@ const WorkoutSchema = new Schema({
       },
     },
   ],
+  
+}, {
+  toJSON: {
+    virtuals: true,
+  }
+});
+
+
+// help from tutor
+// this takes the objects from the exercise array and adds the durations together to get one number
+WorkoutSchema.virtual('totalDuration').get(function() {
+  return this.exercises.reduce((total, exercise) => {
+    return total + exercise.duration;
+  }, 0);
 });
 
 const Workout = mongoose.model('Workout', WorkoutSchema);

@@ -1,14 +1,7 @@
 const router = require('express').Router();
 const db = require('../models/Workout');
 
-// Reads all the collections in the database and finds the lastest workout for the homepage
-router.get('/workouts', (req, res) => {
-  db.findOne({})
-    .then((data) => {
-      console.log('get workout for home: ', data);
-      res.json(data);
-    });
-});
+
 
 // creates a new collection in the database
 router.post('/workouts', (req, res) => {
@@ -35,7 +28,14 @@ router.put('/workouts/:id', (req, res) => {
       console.error(err);
     });
 });
-
+// Reads all the collections in the database and finds the lastest workout for the homepage
+router.get('/workouts', (req, res) => {
+  db.find({})
+    .then((data) => {
+      // console.log('get workout for home: ', data);
+      res.json(data);
+    });
+});
 // gets all the collections in the database
 router.get('/workouts/range', (req, res) => {
   db.find({})
