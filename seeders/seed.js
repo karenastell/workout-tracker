@@ -3,7 +3,7 @@ let db = require("../models/Workout");
 
 const dbURL = 'mongodb://localhost/workout';
 
-mongoose.connect(process.env.MONGODO_URI || dbURL, {
+mongoose.connect(process.env.MONGODB_URI || dbURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
