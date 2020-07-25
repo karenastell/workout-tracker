@@ -9,6 +9,16 @@ This app was created using MongoDB, Mongoose, Express, and Node.js.
 If running from the console - use `npm install` to install all needed dependencies and `npm run seed` to seed the database.
 
 
+## Application Visual
+
+### Home Page
+![Home](./public/images/home.png)
+
+### Add a New/Update an Excercise Page
+![Home](./public/images/add-exercise.png)
+
+### Charts Page
+![Home](./public/images/charts.png)
 
 ## Where To Find This App
 

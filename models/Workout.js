@@ -22,22 +22,27 @@ const WorkoutSchema = new Schema({
         type: Number,
         trim: true,
         required: 'Workout Duration Required',
+        default: 0,
       },
       weight: {
         type: Number,
         trim: true,
+        default: 0,
       },
       sets: {
         type: Number,
         trim: true,
+        default: 0,
       },
       reps: {
         type: Number,
         trim: true,
+        default: 0,
       },
       distance: {
         type: Number,
         trim: true,
+        default: 0,
       },
     },
   ],
